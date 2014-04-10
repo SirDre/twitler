@@ -38,7 +38,11 @@
 <head>
 <title>Twitter Sign-in</title>
 
+<link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+
+<script type="text/javascript" src="assets/js/scripts.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+
 
 </head>
 <body>
@@ -127,16 +131,16 @@
 		
 <?php
  
-		//Get latest tweets
-		$my_tweets = $connection->get('statuses/user_timeline', array('screen_name' => $screenname, 'count' => 5));
-		/* echo '<pre>'; print_r($my_tweets); echo '</pre>'; */
-		
-		echo '<div class="tweet_list"><strong>Latest Tweets : </strong>';
-		echo '<ul>';
-		foreach ($my_tweets as $my_tweet) {
-			echo '<li>'.$my_tweet->text.' <br />-<i>'.$my_tweet->created_at.'</i></li>';
-		}
-		echo '</ul></div>';
+	//Get latest tweets
+	$my_tweets = $connection->get('statuses/user_timeline', array('screen_name' => $screenname, 'count' => 5));
+	/* echo '<pre>'; print_r($my_tweets); echo '</pre>'; */
+	
+	echo '<div class="tweet_list"><strong>Latest Tweets : </strong>';
+	echo '<ul>';
+	foreach ($my_tweets as $my_tweet) {
+		echo '<li>'.$my_tweet->text.' <br />-<i>'.$my_tweet->created_at.'</i></li>';
+	}
+	echo '</ul></div>';
 		
 ?>
 		
@@ -149,12 +153,12 @@
 		
 }else{
  
-	 echo ' <h2>Welcome to Twitler</h2>';
-	 echo ' <i>A twitter app for tweeting and storing tweets within your database</i>';
-	 echo '	<p>Use your Twitter account to sign-in. By signing in here, you can use Twitler </p>';
+	echo ' <h2>Welcome to Twitler</h2>';
+	echo ' <i>A twitter app for tweeting and storing tweets within your database</i>';
+	echo ' <p>Use your Twitter account to sign-in. By signing in here, you can use Twitler </p>';
 	
-		//login button
-		echo '<a href="process.php"><img src="images/sign-in-with-twitter-l.png" width="151" height="24" border="0" /></a>';
+	//login button
+	echo '<a href="process.php"><img src="assets/img/sign-in-with-twitter-l.png" width="151" height="24" border="0" /></a>';
 	 
 }
 
