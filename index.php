@@ -90,6 +90,9 @@
 	//Post my tweet to twitter
 	$my_update = $connection->post('statuses/update', array('status' => $_POST["twitler"]));
   
+  
+        //redirect
+  	die('<script type="text/javascript">window.top.location="tweetresponse.php"</script>'); 
     		 
 	}
 	
