@@ -6,7 +6,7 @@ if(!defined('AUTH_CHECK')) die('You are not allowed to execute this file directl
 define('CONSUMER_KEY', '*******');
 define('CONSUMER_SECRET', '*******');
 
-define('OAUTH_CALLBACK', 'process.php');
+define('OAUTH_CALLBACK', 'tweetverifier.php');
 
 
 // Database config 
