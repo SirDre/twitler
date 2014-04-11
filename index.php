@@ -12,6 +12,9 @@
 	
 	// Include config file 
 	include_once("config.php");
+	include_once("libs/twitteroauth.php");
+	
+	require "tweetstyler.php";
 	
 	// remove tweets older than 12 hour to prevent spam
 	//mysql_query("DELETE FROM demo_twitter_timeline WHERE id>1 AND dt<SUBTIME(NOW(),'0 12:0:0')");
