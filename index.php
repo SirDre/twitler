@@ -17,7 +17,7 @@
 	//mysql_query("DELETE FROM demo_twitter_timeline WHERE id>1 AND dt<SUBTIME(NOW(),'0 12:0:0')");
 	  
 	//fetch the timeline
-	$q = mysql_query("SELECT * FROM demo_twitter_timeline ORDER BY ID DESC");
+	$q = mysql_query("SELECT * FROM demo_twitlerdb ORDER BY ID DESC");
 	
 	$timeline='';
 	while($row=mysql_fetch_assoc($q))
@@ -27,9 +27,9 @@
 	
 	// fetch the latest tweet
 	$lastTweet = '';
-	list($lastTweet) = mysql_fetch_array(mysql_query("SELECT tweet FROM demo_twitter_timeline ORDER BY id DESC LIMIT 1"));
+	list($lastTweet) = mysql_fetch_array(mysql_query("SELECT tweet FROM demo_twitlerdb ORDER BY id DESC LIMIT 1"));
 	
-	if(!$lastTweet) $lastTweet = "You don't have any tweets yet!";
+	if(!$lastTweet) $lastTweet = "Sorry. No tweets available.";
 
 
 ?>
@@ -74,7 +74,7 @@
 	
 	//Validate word count
 	if(mb_strlen($_POST['twitler']) < 1 || mb_strlen($_POST['twitler'])>140)
-	die("<h2>Hey, you typed too much text. Should be less than 141 char</h2><p>&nbsp;</p<div class=\"welcome_txt\"> <strong>'.$screenname.'</strong> (Twitter ID : '.$twitterid.'). <a href=\"index.php\"> Home </a> | <a href=\"index.php?reset=1\">Logout</a>!</div>");
+	die("<h2>Hey, you typed too much text. Should be less than 141 char</h2><p>&nbsp;</p<div class=\"info\"> <strong>'.$screenname.'</strong> (Twitter ID : '.$twitterid.'). <a href=\"index.php\"> Home </a> | <a href=\"index.php?reset=1\">Logout</a>!</div>");
 	
 	
 	//Display widget for @SenorDre
