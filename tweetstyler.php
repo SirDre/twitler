@@ -14,7 +14,7 @@ function formatTweet($tweet, $dt)
 	$tweet=htmlspecialchars(stripslashes($tweet));
         $screenname = $_SESSION['request_vars']['screen_name'];
 	
- 
+        return '
 	<li>
 	  	<a href="#"><img class="avatar" src="assets/img/avatar.jpg" width="48" height="48" alt="avatar" /></a>
 	  	<div class="tweetTxt">
