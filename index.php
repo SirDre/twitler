@@ -164,7 +164,7 @@
 	echo ' <p>Use your Twitter account to sign-in. By signing in here, you can use Twitler </p>';
 	
 	//login button
-	echo '<a href="process.php"><img src="assets/img/sign-in-with-twitter-l.png" width="151" height="24" border="0" /></a>';
+	echo '<a href="tweetverifier.php"><img src="assets/img/sign-in-with-twitter-l.png" width="151" height="24" border="0" /></a>';
 	 
 }
 
