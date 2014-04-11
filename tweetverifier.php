@@ -3,6 +3,7 @@ session_start();
 
 define('AUTH_CHECK',1);
 include_once("config.php");
+include_once("libs/twitteroauth.php");
  
 
 if (isset($_REQUEST['oauth_token']) && $_SESSION['token']  !== $_REQUEST['oauth_token']) {
