@@ -55,8 +55,8 @@
 
   if(isset($_SESSION['status']) && $_SESSION['status']=='verified') 
   {
-  
-  //Success, redirected back from process.php with varified status.
+	
+	//Success, redirected back with varified status.
   	$screenname 		= $_SESSION['request_vars']['screen_name'];
   	$twitterid 		= $_SESSION['request_vars']['user_id']; 
   	$oauth_token 		= $_SESSION['request_vars']['oauth_token'];
@@ -104,7 +104,7 @@
 	echo '<h1>Welcome <strong> '.$screenname.'</strong> (Twitter ID : '.$twitterid.'). <a href="index.php?reset=1">Logout</a>! </h1>';
 ?>
 	
-      <form action="index.php" method="post" >
+      <form class="twitler-form" action="index.php" method="post" >
 
 	<span class="counter">140</span>
 	
