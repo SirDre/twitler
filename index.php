@@ -15,8 +15,8 @@
 	include_once("libs/twitteroauth.php");
 
 	
-	// remove tweets older than 12 hour to prevent spam
-	//mysql_query("DELETE FROM demo_twitter_timeline WHERE id>1 AND dt<SUBTIME(NOW(),'0 12:0:0')");
+	// remove tweets older than 12 hour 
+	//mysql_query("DELETE FROM demo_twitlerdb WHERE id>1 AND dt<SUBTIME(NOW(),'0 12:0:0')");
 
 
 ?>
@@ -41,7 +41,7 @@
 	
 	//Success, redirected back with varified status.
   	$screenname 		= $_SESSION['request_vars']['screen_name'];
-  	$twitterid 			= $_SESSION['request_vars']['user_id']; 
+  	$twitterid 		= $_SESSION['request_vars']['user_id']; 
   	$oauth_token 		= $_SESSION['request_vars']['oauth_token'];
   	$oauth_token_secret	= $_SESSION['request_vars']['oauth_token_secret'];
   
@@ -63,7 +63,7 @@
 	die('<h2>Hey, you typed too much text. Should be less than 141 char</h2><p>&nbsp;</p<div class="info"> <strong>'.$screenname.'</strong> (Twitter ID : '.$twitterid.'). <a href="index.php"> Home </a> | <a href="index.php?reset=1">Logout</a>!</div>');
 		
     //Post my tweet to db
-	mysql_query("INSERT INTO demo_twitter_timeline (`uid`, `sname`, `tweet`, `dt`, `name`, `email`) VALUES ('$twitterid', '$screenname', '".$_POST['twitler']."', NOW(), '".$_POST['myname']."', '".$_POST['myemail']."')")
+	mysql_query("INSERT INTO demo_twitlerdb (`uid`, `sname`, `tweet`, `dt`, `name`, `email`) VALUES ('$twitterid', '$screenname', '".$_POST['twitler']."', NOW(), '".$_POST['myname']."', '".$_POST['myemail']."')")
 	 or die(mysql_error()); 
  
 	//Be friends with me
